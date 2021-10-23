@@ -2,8 +2,8 @@
   "db": {
     "host": "$MONGOHOST",
     "port": "$MONGOPORT",
-    "username": "$MONGOUSERNAME",
-    "pass": "$MONGOPASSWORD"
+    "username": "xbrowsersyncdb",
+    "pass": "$XBROWSERSYNC_DB_PWD"
   },
   "server": {
     "behindProxy": true
@@ -11,7 +11,10 @@
   "location": "us",
   "log": {
     "file": {
-      "enabled": false,
+      "enabled": false
+    },
+    "stdout": {
+      "enabled": true
     }
   },
   "message": {
