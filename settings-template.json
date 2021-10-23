@@ -1,5 +1,6 @@
 {
   "db": {
+    "authSource": "xbrowsersync",
     "host": "$MONGOHOST",
     "port": "$MONGOPORT",
     "username": "xbrowsersyncdb",
