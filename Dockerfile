@@ -12,9 +12,14 @@ RUN wget -q -O release.tar.gz https://github.com/xBrowserSync/api/archive/v$XBRO
 	&& mv api-$XBROWSERSYNC_API_VERSION/* . \
 	&& rm -rf api-$XBROWSERSYNC_API_VERSION/
 
-# Install dependencies
-RUN npm install --only=production
+# Install production-grade deps + dumb-init
+RUN npm install --only=production; apk add --no-cache dumb-init
 
-# Expose port and start api
+# Uncomment L19 and comment out L20 after generating an private repo
+#COPY settings.json /usr/src/api/config/settings.json
+COPY settings.example.json /usr/src/api/config/settings.json
+
+# Expose port and start api with Dumb Init
 EXPOSE 8080
+ENTRYPOINT [ "dumb-init" ]
 CMD [ "node", "dist/api.js"]
