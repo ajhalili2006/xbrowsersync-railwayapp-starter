@@ -1,0 +1,21 @@
+{
+  "db": {
+    "host": "$MONGOHOST",
+    "port": "$MONGOPORT",
+    "username": "$MONGOUSERNAME",
+    "pass": "$MONGOPASSWORD"
+  },
+  "server": {
+    "behindProxy": true
+  },
+  "location": "us",
+  "log": {
+    "file": {
+      "enabled": false,
+    }
+  },
+  "message": {
+    "message": "Hello, world",
+    "online": true
+  }
+}
