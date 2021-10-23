@@ -8,7 +8,7 @@ WORKDIR /usr/src/api
 # Uncomment L10 and comment out L11 after generating an private repo if you ever want to manually handle config
 # in version control, which is an bad pratice if you commit secrets.
 #COPY settings.json /usr/src/api/config/settings.json
-COPY settings.-xample.json /usr/src/api/config/template.json
+COPY settings-template.json /usr/src/api/config/template.json
 # Also copy the entrypoint script so we can amke to executable in later steps
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
